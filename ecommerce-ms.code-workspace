@@ -1,0 +1,16 @@
+{
+	"folders": [
+		{
+			"path": "user-service-ecommerce-ms"
+		},
+		{
+			"path": "product-service-ecommerce-ms"
+		},
+		{
+			"path": "Docs"
+		},
+		{
+			"path": "."
+		}
+	]
+}
