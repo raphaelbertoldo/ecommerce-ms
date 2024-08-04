@@ -1,7 +1,7 @@
 version: "3.2"
 services:
   express:
-    build: ./user-service-ecommerce-ms
+    build: ./user-service
     entrypoint: ./.docker/entrypoint.sh
     container_name: user-services
     environment:
