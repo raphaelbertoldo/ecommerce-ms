@@ -6,8 +6,8 @@
   "type": "module",
   "scripts": {
     "test": "jest --detectOpenHandles",
-    "start": "node  index.js",
-    "dev": "nodemon  index.js"
+    "start": "node index.js",
+    "dev": "nodemon index.js"
   },
   "jest": {
     "testEnvironment": "node",
