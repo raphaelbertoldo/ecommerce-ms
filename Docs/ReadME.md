@@ -1,5 +1,3 @@
-## Para rodar a aplicação basta inicar todos os serviços com 'npm run dev'
-
 # E-commerce Microservice Application
 
 Backend Application for e-commerce using microservices architeture, RabbitMQ to process orders and mongoDB.
