@@ -1,30 +1,30 @@
 version: "3.2"
 services:
   express:
-      build: ./user-service-ecommerce-ms
-      entrypoint: ./.docker/entrypoint.sh
-      container_name: user-services
-      environment:
-        - PORT=3001
-        - JWT_SECRET=NLvE/kpeiZuImDFS50tdoWxDrjx8TNqSN1IgT6KwfwvHolimByS9BA7iVFCmVZaFkRhIh8nZAk2fNII5GrXS9EikMIIy8Hc8zzyvv/5UQTjbfAIf1ncai3SH4/fujRA9dM5JpQ6pTq4GR70csqYdLrwVNOITkYZkSmNMaN7FEt6q6C5sQ6kduW06uAgEzCsbZm1z6EiaaVj8VHgkfM1RNSJbP1I+/9ty0i6XCZEAyTashbrVVKZiqrLvN9xLcqU7yQfg/YEyYaYLlsnyAS0MwzrKM1+ii/pvU9pzr1Zwg9PL/KilJz/3Wu2Kwq7SQR9vr7iZXk40c8+bVQlCuek0sw==
-        - MONGODB_URL=mongodb+srv://admin:admin123@estudos.vv9gzeq.mongodb.net/ecommerce-ms-users
-      ports:
-        - 3001:3001
+    build: ./user-service-ecommerce-ms
+    entrypoint: ./.docker/entrypoint.sh
+    container_name: user-services
+    environment:
+      - PORT=3001
+      - JWT_SECRET=jwt secret
+      - MONGODB_URL=mongodb+srv://user:password@estudos.vv9gzeq.mongodb.net/dbname
+    ports:
+      - 3001:3001
 
-      depends_on: 
-        - rabbitmq  
+    depends_on:
+      - rabbitmq
 
   rabbitmq:
     image: rabbitmq:3-management-alpine
-    container_name: 'rabbitmq_1'
+    container_name: "rabbitmq_1"
     ports:
-        - 5672:5672
-        - 15672:15672
+      - 5672:5672
+      - 15672:15672
     volumes:
-        - ~/.docker-conf/rabbitmq/data/:/var/lib/rabbitmq/
-        - ~/.docker-conf/rabbitmq/log/:/var/log/rabbitmq
+      - ~/.docker-conf/rabbitmq/data/:/var/lib/rabbitmq/
+      - ~/.docker-conf/rabbitmq/log/:/var/log/rabbitmq
     networks:
-        - rabbitmq_go_net 
+      - rabbitmq_go_net
     environment:
       - RABBITMQ_DEFAULT_USER=admin
       - RABBITMQ_DEFAULT_PASS=admin
