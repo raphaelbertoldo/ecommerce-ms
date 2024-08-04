@@ -1,7 +1,7 @@
 import express from "express";
-import routes from "./router/index.js";
+import routes from "./src/router/index.js";
 import "dotenv/config";
-import { connectDB, closeSession } from "./providers/mongodb.js";
+import { connectDB, closeSession } from "./src/providers/mongodb.js";
 const app = express();
 
 app.use("/api/v1", routes);
