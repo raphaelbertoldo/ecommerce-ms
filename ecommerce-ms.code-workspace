@@ -6,11 +6,11 @@
     {
       "path": "product-service"
     },
-    {
-      "path": "Docs"
+{
+      "path": "order-service"
     },
     {
-      "path": "."
+      "path": "Docs"
     }
   ]
 }
