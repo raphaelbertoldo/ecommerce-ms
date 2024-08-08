@@ -21,7 +21,7 @@ export const createNewOrder = async (req, res) => {
     });
     const orderData = JSON.stringify(order);
 
-    await addQueueItem({ queue: `order`, item: Buffer.from(orderData) });
+    await addQueueItem({ queue: `order`, item: orderData });
     res
       .status(201)
       .send({ message: `New order created and sent to queue ${order}` });

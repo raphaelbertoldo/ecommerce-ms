@@ -1,4 +1,6 @@
-export const processOrder = (req, res) => {
+import { consumerQueue } from "../providers/amqplib.js";
+
+export const processOrders = async () => {
   // TODO consume order
-  res.status(200).send({ key: req.params.id });
+  await consumerQueue({ queue: "order" });
 };

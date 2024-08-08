@@ -4,7 +4,11 @@ export async function addQueueItem({ queue, item }) {
   try {
     const connection = await connect();
     const channel01 = await connection.createChannel();
-    const data = Buffer.from(JSON.stringify(item));
+    console.log(
+      "🚀 ~ addQueueItem ~ JSON.stringify(item):",
+      JSON.stringify(item)
+    );
+    const data = Buffer.from(item);
 
     await channel01.assertQueue(queue, { durable: true });
     channel01.sendToQueue(queue, data);
@@ -20,5 +24,5 @@ export async function addQueueItem({ queue, item }) {
 }
 
 const connect = async () => {
-  return await amqp.connect("amqp://myuser:mypassword@localhost");
+  return await amqp.connect("amqp://guest:guest@localhost:5672");
 };
