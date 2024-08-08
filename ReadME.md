@@ -25,5 +25,4 @@ or you can start each service:
     cd order-service
     npm run dev
 
-
-
+<img width="780" alt="Captura de Tela 2024-08-07 às 23 02 53" src="https://github.com/user-attachments/assets/4987def9-676f-4bb3-90c4-507990d3e911">
