@@ -1,4 +1,4 @@
-## Ecommerce Microservices API
+## E-commerce Microservices API
 
 This project has development to improve my architeture skills, has used node, express, mongoDB, and rabbitMQ.
 
